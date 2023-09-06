@@ -5,14 +5,17 @@
 main{
     display:flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .row {
-    width: 75%; 
+    width:65%;
+
+
 }
 
 #list {
-    background-color: pink;
+    background-color: rgba(0, 0, 0, 0.821);
     width: 25%;
     display:flex;
     flex-direction: column;
@@ -20,11 +23,21 @@ main{
 }
 
 h4{
+    text-align: center;
+    color: gold;
+    text-shadow: 2px 2px 5px rgba(79, 79, 79, 0.986);
+    font-weight: bolder;
 /* stopped here. got caught up at work.
 h4 now displays new releases as same size as list across
 need to format to middle etc */
 }
-
+li {
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: larger;
+    color:white;
+    text-align: center;
+}
 
 /* MOBILE CODE BELOW. WILL NEED TO TEST THIS ONCE WE
 FINISH REST OF CSS, BUT SHOULD BE GOOD.
