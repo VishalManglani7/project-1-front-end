@@ -45,8 +45,8 @@ function startApp(){
              var player;
              function onYouTubeIframeAPIReady() {
                player = new YT.Player('player', {
-                 height: '390',
-                 width: '640',
+                 height: '280',
+                 width: '490',
                  videoId: 'pBk4NYhWNMM',
                  playerVars: {
                    'playsinline': 1

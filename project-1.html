@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upcoming Releases</title>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/project-1.css"/>
 </head>
 
@@ -13,17 +14,33 @@
     
     <div>
     <h2>New Releases</h2>
-    <div class="movie-info">
-    <!-- OMDB API GENRATES THESE FIELDS -->
+    <div class="row">
+        <div class="col s12 m7">
+          <div class="card">
+            <div style="font-weight: bold"; class="card-title card-panel pink lighten-2  title">Card Title</div>
+            <div class="card-content movie-info">
+              <p class ="rating"></p>
+              <p class ="runtime"></p>
+              <p class="genre"></p>
+            </div>
+            <div class="video-container">
+                <div id="player"></div>
+                <!-- <span class="card-title">Card Title</span> -->
+              </div>
+          </div>
+        </div>
+      </div>
+    <!-- <div class="movie-info">
+    OMDB API GENRATES THESE FIELDS 
         <p class="title"></p>
         <p class="rating"></p>
         <p class="runtime"></p>
         <p class="genre"></p>
-    </div>
+    </div> -->
 
     <!-- YOUTUBE IMBEDS VIDEO HERE WITH API -->
 <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <div id="player"></div>
+    <!-- <div id="player"></div> -->
 
     <aside>
         <!-- this is the list where user can add/remove movies from local storage -->
@@ -35,5 +52,5 @@
 <script src="assets/project-1.js"></script>
 </body>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </html>
