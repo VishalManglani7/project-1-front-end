@@ -26,7 +26,7 @@ function startApp(){
                 localStorage.setItem('title', title);
                 seeList.unshift(title);
                 localStorage.setItem('seeList',JSON.stringify(seeList));
-                $('.movie-list').append("<li>"+localStorage.getItem('title')+"</li>");
+                $('.collection').append("<li>"+localStorage.getItem('title')+"</li>");
     
            })
     
