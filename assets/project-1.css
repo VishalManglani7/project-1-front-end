@@ -39,8 +39,7 @@ li {
     text-align: center;
 }
 
-/* MOBILE CODE BELOW. WILL NEED TO TEST THIS ONCE WE
-FINISH REST OF CSS, BUT SHOULD BE GOOD.
+
 @media screen and (max-width: 600px){
     main{
         flex-direction: column;
@@ -48,10 +47,10 @@ FINISH REST OF CSS, BUT SHOULD BE GOOD.
     #search-history{
         width: 100%;
     }
-    #weather{
+    #list{
         width:100%;
     }
     #forecast{
         flex-direction: column
-    }
+    }}
     

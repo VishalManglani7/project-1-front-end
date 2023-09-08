@@ -47,8 +47,17 @@ function startApp(){
                               localStorage.setItem('opp-title', oppTitle);
                               seeList.unshift(oppTitle);
                               localStorage.setItem('seeList',JSON.stringify(seeList));
-                              $('.movie-list').append("<li>"+localStorage.getItem('opp-title')+"</li>");
-                  
+                              $('.movie-list').append("<li class='opp'>" + localStorage.getItem('opp-title') + "</li>");
+
+
+                              
+                              // $('.opp').on('click', function () {
+                              //   // Calculate the position of the movie on the page
+                              //   var moviePosition = $(this).offset().top;
+
+                              //   window.scrollTo(0, moviePosition);
+                              
+                              });
                          })
                   
                })    
