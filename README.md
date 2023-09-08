@@ -1,7 +1,7 @@
 # project-1-front-end Movie App
 
 ## Description
-The team has created an app which displayed a currated set of movies, along with trailers, and allows the user to save movies on their must see list. This was done by using OMDB's API, as well as Googles Youtube API.
+The team has created an app which displayed a currated set of movies, along with trailers, and allows the user to save movies on their must see list. This was done by using OMDB's API, as well as Google's Youtube API.
 
 ## User Story
 

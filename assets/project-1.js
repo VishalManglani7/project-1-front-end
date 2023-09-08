@@ -27,8 +27,12 @@ function startApp(){
               $('.barbie-title').on('click', function(){
                 seeList.unshift(barbieTitle);
                 localStorage.setItem('seeList',JSON.stringify(seeList));
-                  $('.movie-list').append("<li>"+localStorage.getItem('barbie-title')+"</li>");
-              });
+                  $('.movie-list').append("<li class='bar'>"+localStorage.getItem('barbie-title')+"</li>");
+                  $('.bar').on('click', function () {
+                    //   // Calculate the position of the movie on the page
+                      var moviePosition = $('.barbie-footer').offset().top;
+                     window.scrollTo(0, moviePosition);
+              });})
                   var requestURLOpp = 'http://www.omdbapi.com/?t=oppenheimer&apikey=5ee7c193'; //title, rating, genre, runtime
                   $.ajax({
                       url: requestURLOpp,
@@ -48,18 +52,49 @@ function startApp(){
                               seeList.unshift(oppTitle);
                               localStorage.setItem('seeList',JSON.stringify(seeList));
                               $('.movie-list').append("<li class='opp'>" + localStorage.getItem('opp-title') + "</li>");
+                              
 
 
                               
-                              // $('.opp').on('click', function () {
+                              $('.opp').on('click', function () {
                               //   // Calculate the position of the movie on the page
-                              //   var moviePosition = $(this).offset().top;
+                                var moviePosition = $('.opp-footer').offset().top;
 
-                              //   window.scrollTo(0, moviePosition);
+                               window.scrollTo(0, moviePosition);
                               
                               });
                          })
-                  
+                         var blueBeetleURL = 'http://www.omdbapi.com/?t=blue+beetle&apikey=5ee7c193';
+                         $.ajax({
+                          url:blueBeetleURL,
+                          method: "GET"})
+                          .then(function(response){
+                            console.log(response);
+                            $('.bb-title').text(response.Title);
+                            $('.bb-rating').text("Rated: "+ response.Rated);
+                            $('.bb-runtime').text("Runtime: "+ response.Runtime);
+                            $('.bb-genre').text("Genre: "+ response.Genre); 
+  
+                            var bbTitle = response.Title;
+                            localStorage.setItem('bb-title', bbTitle);
+                            $('.bb-title').on('click', function(){
+                                localStorage.setItem('bb-title', bbTitle);
+                                seeList.unshift(bbTitle);
+                                localStorage.setItem('seeList',JSON.stringify(seeList));
+                                $('.movie-list').append("<li class='bb'>" + localStorage.getItem('bb-title') + "</li>");
+                                
+  
+  
+                                
+                                $('.bb').on('click', function () {
+                                //   // Calculate the position of the movie on the page
+                                  var moviePosition = $('.bb-footer').offset().top;
+  
+                                 window.scrollTo(0, moviePosition);
+                                
+                                });
+                          })
+                         })
                })    
              })
 
@@ -110,6 +145,15 @@ function startApp(){
 
                 
               });
+              bbPlayer=new YT.Player('bb-player', {
+                height:'280',
+                width:'490',
+                videoId: 'vS3_72Gb-bI',
+                playerVars:{'playsinline':1}, 
+                events: {'onReady':onPlayerReady,
+              'onStateChange': onPlayerStateChange}
+              
+              })
              }
        
              // 4. The API will call this function when the video player is ready.
