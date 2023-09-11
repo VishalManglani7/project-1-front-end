@@ -1,12 +1,10 @@
 //API FUNCTIONALITY
-//upon starting page, function runs which uses fandango API to display the 3 newest releases (or most popular)
-//function continues with the Youtube API. Searches the above movie name. Sorts searches by view count and displays the
-//most viewed in the embeded API.
+//upon starting page, function runs thru OMDB API, and populates selected info for popular selected movies.
+//function continues with the Youtube API. Where it grabs trailers for each movie and displays below movie info.
 
 //USER INTERACTIONS/LOCAL STORAGE
-//On.Click command associated with green checkbox next to each movie title
-//Upon clicking, movie is added to local storage, and displayed on lefthand side bar.
-//Upon clicking red X when movie is on the side bar, movie name is removed.
+//On.Click of movie title, movie is added to local storage/users must see list on the left hand side
+//upon clicking the movie title on the side bar, the screen scrolls back to that trailer and movie info.
 
 function startApp(){
      var seeList = JSON.parse(localStorage.getItem('seeList'))||[];
@@ -53,12 +51,10 @@ function startApp(){
                               localStorage.setItem('seeList',JSON.stringify(seeList));
                               $('.movie-list').append("<li class='opp'>" + localStorage.getItem('opp-title') + "</li>");
                               
-
-
                               
                               $('.opp').on('click', function () {
-                              //   // Calculate the position of the movie on the page
-                                var moviePosition = $('.opp-footer').offset().top;
+                              // offset uses the click to scroll to correct part of page. set to footer of movie so that it displays trailer when clicked.
+                                var moviePosition = $('.barbie-footer').offset().top;
 
                                window.scrollTo(0, moviePosition);
                               
@@ -87,7 +83,7 @@ function startApp(){
   
                                 
                                 $('.bb').on('click', function () {
-                                //   // Calculate the position of the movie on the page
+                                // offset uses the click to scroll to correct part of page. set to footer of movie so that it displays trailer when clicked.
                                   var moviePosition = $('.bb-footer').offset().top;
   
                                  window.scrollTo(0, moviePosition);
@@ -96,23 +92,18 @@ function startApp(){
                           })
                          })
                })    
-             })
-
-      
+             })    
    }
-      
-    
-      
 
 
-             // 2. This code loads the IFrame Player API code asynchronously.
+             // This code loads the IFrame Player API code asynchronously.
              var tag = document.createElement('script');
       
              tag.src = "https://www.youtube.com/iframe_api";
              var firstScriptTag = document.getElementsByTagName('script')[0];
              firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
        
-             // 3. This function creates an <iframe> (and YouTube player)
+             // This function creates an <iframe> (and YouTube player)
              //    after the API code downloads.
              var barbiePlayer;
              var oppPlayer;
@@ -156,14 +147,11 @@ function startApp(){
               })
              }
        
-             // 4. The API will call this function when the video player is ready.
+             // The API will call this function when the video player is ready.
              function onPlayerReady(event) {
                event.target.playVideo();
              }
        
-             // 5. The API calls this function when the player's state changes.
-             //    The function indicates that when playing a video (state=1),
-             //    the player should play for six seconds and then stop.
              var done = false;
              function onPlayerStateChange(event) {
                if (event.data == YT.PlayerState.PLAYING && !done) {
