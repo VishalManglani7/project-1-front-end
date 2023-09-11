@@ -8,7 +8,7 @@
 
 function startApp(){
      var seeList = JSON.parse(localStorage.getItem('seeList'))||[];
-      var requestURLBarbie = 'http://www.omdbapi.com/?t=barbie&apikey=5ee7c193'; //title, rating, genre, runtime
+      var requestURLBarbie = 'https://www.omdbapi.com/?t=barbie&apikey=5ee7c193'; //title, rating, genre, runtime
       $.ajax({
           url: requestURLBarbie,
           method: "GET"        
@@ -31,7 +31,7 @@ function startApp(){
                       var moviePosition = $('.barbie-footer').offset().top;
                      window.scrollTo(0, moviePosition);
               });})
-                  var requestURLOpp = 'http://www.omdbapi.com/?t=oppenheimer&apikey=5ee7c193'; //title, rating, genre, runtime
+                  var requestURLOpp = 'https://www.omdbapi.com/?t=oppenheimer&apikey=5ee7c193'; //title, rating, genre, runtime
                   $.ajax({
                       url: requestURLOpp,
                       method: "GET"        
@@ -60,7 +60,7 @@ function startApp(){
                               
                               });
                          })
-                         var blueBeetleURL = 'http://www.omdbapi.com/?t=blue+beetle&apikey=5ee7c193';
+                         var blueBeetleURL = 'https://www.omdbapi.com/?t=blue+beetle&apikey=5ee7c193';
                          $.ajax({
                           url:blueBeetleURL,
                           method: "GET"})
