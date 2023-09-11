@@ -40,3 +40,6 @@ This project will be revisited in the near future. The team will update fuctiona
 ## Project Link
 
 https://vishalmanglani7.github.io/project-1-front-end/
+
+## Technologies Used
+OMDB API, Youtube API, HTML, CSS, JavaScript, Materialize, Jquery
