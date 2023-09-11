@@ -7,7 +7,6 @@
 //upon clicking the movie title on the side bar, the screen scrolls back to that trailer and movie info.
 
 function startApp(){
-     var seeList = JSON.parse(localStorage.getItem('seeList'))||[];
       var requestURLBarbie = 'https://www.omdbapi.com/?t=barbie&apikey=5ee7c193'; //title, rating, genre, runtime
       $.ajax({
           url: requestURLBarbie,
@@ -18,7 +17,7 @@ function startApp(){
               $('.barbie-title').text(response.Title);
               $('.barbie-rating').text("Rated: "+ response.Rated);
               $('.barbie-runtime').text("Runtime: "+ response.Runtime);
-              $('.barbie-genre').text("Genre: "+ response.Genre); 
+              $('.barbie-genre').text("Genre: "+ response.Genre);
               var seeList = JSON.parse(localStorage.getItem('seeList'))||[];
               var barbieTitle = response.Title;
               localStorage.setItem('barbie-title', barbieTitle);
@@ -28,7 +27,7 @@ function startApp(){
                   $('.movie-list').append("<li class='bar'>"+localStorage.getItem('barbie-title')+"</li>");
                   $('.bar').on('click', function () {
                     //   // Calculate the position of the movie on the page
-                      var moviePosition = $('.barbie-footer').offset().top;
+                      var moviePosition = $('.barbie-title').offset().top;
                      window.scrollTo(0, moviePosition);
               });})
                   var requestURLOpp = 'https://www.omdbapi.com/?t=oppenheimer&apikey=5ee7c193'; //title, rating, genre, runtime
@@ -113,7 +112,8 @@ function startApp(){
                  width: '490',
                  videoId: 'pBk4NYhWNMM',
                  playerVars: {
-                   'playsinline': 1
+                   'playsinline': 1,
+                   'autoplay': 0
                  },
                  events: {
                    'onReady': onPlayerReady,
@@ -127,7 +127,8 @@ function startApp(){
                 width: '490',
                 videoId: 'bK6ldnjE3Y0',
                 playerVars: {
-                  'playsinline': 1
+                  'playsinline': 1,
+                  'autoplay': 0
                 },
                 events: {
                   'onReady': onPlayerReady,
@@ -140,7 +141,8 @@ function startApp(){
                 height:'280',
                 width:'490',
                 videoId: 'vS3_72Gb-bI',
-                playerVars:{'playsinline':1}, 
+                playerVars:{'playsinline':1, 
+                'autoplay': 0}, 
                 events: {'onReady':onPlayerReady,
               'onStateChange': onPlayerStateChange}
               
