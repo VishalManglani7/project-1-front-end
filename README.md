@@ -27,7 +27,7 @@ THEN I notice my screen scroll back to the infomation and trailer for this movie
 
 ## Visuals
 
-UPDATE WHEN PROJECT IS COMPLETED
+![screenshot of site](https://github.com/VishalManglani7/project-1-front-end/blob/main/assets/Screenshot%202023-09-11%20at%2012.41.31%20PM.png)
 
 ## License
 
@@ -39,4 +39,4 @@ This project will be revisited in the near future. The team will update fuctiona
 
 ## Project Link
 
-UPDATED WHEN PAGES IS PUBLISHED
+https://vishalmanglani7.github.io/project-1-front-end/
